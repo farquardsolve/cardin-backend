@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "0583cee12c3f47e4b13e65b37a85e996009182a6913ef515ee0435bc26c7352867866181288f01c566dc260f8fa4841851514f9e9d94f3cbe496bdb48f830375c5cc38a855bdcf67f5a0cecdeceec9eb0c7d58fcb4408cc038b826a5c6ad958c1c15b2e3d788c03d6c6c6d4f7f018ea0d96615c21766838cf23af1c1ff38023ef454b369a28914f6255ba04bb1b9c8e1a14ed62d75cc18f5e20b579fcff9a9d457d28a4e03690ee29dfc1e60c7ec070b960219ef10372f9fa2b9f499d8024871dd39f5d6e177b76877e10343533968102dd5e44a1ef4216fb25478320a44f3f20de22691a47d6e5b0352793d7508ad4f142c2caf6209445294601e0dc28879ad",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "phone",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/cardin"
+}
